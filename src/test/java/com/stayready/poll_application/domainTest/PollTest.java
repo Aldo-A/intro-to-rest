@@ -1,4 +1,4 @@
-package com.stayready.poll_application.domaintest;
+package com.stayready.poll_application.domainTest;
 import com.stayready.poll_application.domain.Option;
 import com.stayready.poll_application.domain.Poll;
 import org.junit.Assert;

@@ -1,32 +1,22 @@
-package com.stayready.poll_application.domaintest;
+package com.stayready.poll_application.domainTest;
 
 import com.stayready.poll_application.domain.Option;
-import com.stayready.poll_application.domain.Vote;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class VoteTest {
-    Vote vote;
+public class OptionTest {
+    Option option;
     @Before
     public void before(){
-        vote = new Vote();
+        option = new Option();
     }
     @Test
     public void getIdTest(){
         //Given
         long expected = 0;
         //When
-        long actual = vote.getId();
-        //Then
-        Assert.assertEquals(expected, actual);
-    }
-    @Test
-    public void getOptionTest(){
-        //Given
-        Option expected = null;
-        //When
-        Option actual = vote.getOption();
+        long actual = option.getId();
         //Then
         Assert.assertEquals(expected, actual);
     }
@@ -35,21 +25,29 @@ public class VoteTest {
         //Given
         long expected = 1234567891;
         //When
-        vote.setId(1234567891);
-        long actual = vote.getId();
+        option.setId(expected);
+        long actual = option.getId();
         //Then
         Assert.assertEquals(expected, actual);
     }
     @Test
-    public void setOptionTest(){
+    public void getValueTest(){
         //Given
-        Option expected = new Option();
-        expected.setId(1234567891);
-        expected.setValue("019");
+        String expected = null;
         //When
-        vote.setOption(expected);
-        Option actual = vote.getOption();
+        String actual = option.getValue();
         //Then
         Assert.assertEquals(expected, actual);
     }
+    @Test
+    public void setValueTest(){
+        //Given
+        String expected = "Value";
+        //When
+        option.setValue("Value");
+        String actual = option.getValue();
+        //Then
+        Assert.assertEquals(expected, actual);
+    }
+
 }
